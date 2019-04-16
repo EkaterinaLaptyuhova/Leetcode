@@ -13,8 +13,7 @@ class Solution:
                 str_represent.append('Buzz')
                 k += 1
             else:
-                element = str(k)
-                str_represent.append(element)
+                str_represent.append(str(k))
                 k += 1
         return str_represent
 
