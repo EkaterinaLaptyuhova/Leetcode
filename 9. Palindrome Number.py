@@ -9,7 +9,5 @@ class Solution:
             y = y * 10 + (x % 10)
             x = x // 10
 
-        if duplicate == y:
-            return True
-        else:
-            return False
+        return duplicate == y
+
