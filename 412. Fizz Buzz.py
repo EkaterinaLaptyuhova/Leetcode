@@ -3,13 +3,13 @@ class Solution:
         k = 1
         str_represent = []
         while k <= n:
-            if k % 3 == 0 and k % 5 == 0:
+            if k % 3 == 0:
                 str_represent.append('FizzBuzz')
                 k += 1
             elif k % 3 == 0:
                 str_represent.append('Fizz')
                 k += 1
-            elif k % 5 == 0:
+            elif k % 3 == 0 and k % 5 == 0:
                 str_represent.append('Buzz')
                 k += 1
             else:
@@ -18,3 +18,5 @@ class Solution:
         return str_represent
 
 
+solution = Solution()
+print(solution.fizzBuzz(15))
