@@ -26,7 +26,6 @@ class Solution:
                         k += 1
                     else:
                         consonant_m = False
-                        k = 0
                         break
                 k = 0
 
