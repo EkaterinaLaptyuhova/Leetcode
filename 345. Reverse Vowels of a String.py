@@ -1,38 +1,19 @@
 class Solution:
-    def reverseVowels(self, s: str) -> str:    
-        n = 0
-        k = 0
-        m = len(s) - 1
-        new_s = ''
-        vowels = 'aeiouAEIOU'
-        while n < len(s) and m >= -1:
-            consonant = True
-            while k < len(vowels):
-                if s[n] != vowels[k]:
-                    k += 1
-                else:
-                    consonant = False
-                    k = 0
-                    break
+    def reverseVowels(self, s: str) -> str:
+        m = 0
+        n = len(s) - 1
+        vowels = "AEOUIaeoui"
 
-            if consonant:
-                    new_s = new_s + s[n]
-                    n += 1
-                    k = 0
+        while m < n:
+            if s[m] in vowels:
+                if s[n] in vowels:
+                    element = s[m]
+                    reverse_element = s[n]
+                    s = s[: m] + reverse_element + s[m + 1 : n] + element + s[n + 1 : ]
+                    m += 1
+                    n -= 1
+                else:
+                    n -= 1
             else:
-                consonant_m = True
-                while k < len(vowels):
-                    if s[m] != vowels[k]:
-                        k += 1
-                    else:
-                        consonant_m = False
-                        break
-                k = 0
-
-                if consonant_m:
-                    m -= 1
-                else:
-                    new_s = new_s + s[m]
-                    m -= 1
-                    n += 1
-        return new_s
+                m += 1
+        return s
